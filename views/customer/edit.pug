@@ -1,0 +1,15 @@
+extends ../layout
+
+block content
+  if customer
+    h2 Edit #{customer.name}
+
+    form( action="/customer/edit/" + customer.id, method="post" )
+      input( name="name", placeholder=customer.name )
+      input( name="address", placeholder=customer.address )
+      input( name="phone_number", placeholder=customer.phone_number )
+      input( type="submit", value="Submit")
+
+    a( href="/payment/add/" + customer.id )
+          h6 Add Card
+    a( href="/customer/" ) Cancel

@@ -1,0 +1,11 @@
+extends ../layout
+
+block content
+  h2 Delete a Topping
+
+  if topping
+    h4 You sure you want to delete #{topping.name}?
+
+    form( action="/toppings/delete/" + topping.id, method="post" )
+      input( type='submit', value='Confirm' ) 
+      a(href="/toppings/") Cancel

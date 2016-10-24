@@ -1,0 +1,45 @@
+extends ../layout
+
+block content
+  h2 Order details
+  h4 Customer ID: #{customer_id}
+  h4 Order ID: #{order_id}
+  hr
+
+  if customPizzas
+    h3 Custom Pizzas
+    -for ( pizza of customPizzas ){
+      h5 pizza id: #{pizza}
+      a( href="/order/remove/custom_pizza/" + pizza + "/" + customer_id + "/" + order_id )
+        h6 delete
+
+    -}
+    a(href="/custom_pizza/add/" + customer_id + "/" + order_id )
+      h6 add
+  hr
+
+  if specialtyPizzas
+    h3 Specialty Pizzas
+    -for ( pizza of specialtyPizzas ){
+      h5 pizza id #{pizza}
+      a( href="/order/remove/specialty_pizza/" + pizza + "/" + customer_id + "/"+ order_id )
+        h6 delete
+    -}
+    a( href="/specialty_pizza/add/" + customer_id + "/" + order_id )
+      h6 add
+  hr
+
+  if beverages
+    h3 beverages
+    -for ( bev of beverages ){
+      h5 beverage id #{bev}
+      a( href="/order/remove/beverage/" + bev + "/" + customer_id + "/" + order_id )
+        h6 delete
+    -}
+    a( href="/beverage/" + customer_id + "/" + order_id  )
+      h6 add
+  hr
+  form( action="/transaction/new", method="post" )
+    input( name="order_id", type="hidden", value=order_id )
+    input( name="customer_id", type="hidden", value=customer_id )
+    input( type="submit", value="Checkout" )

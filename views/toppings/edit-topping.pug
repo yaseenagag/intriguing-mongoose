@@ -1,0 +1,11 @@
+extends ../layout
+
+block content
+  if topping
+    h2 Edit #{topping.name}
+
+    form( action="/toppings/edit/" + topping.id, method="post" )
+      input( name="name", placeholder=topping.name )
+      input( name="price", placeholder=topping.price )
+      input( type="submit", value="Submit" )
+    a( href="/toppings/" ) Cancel

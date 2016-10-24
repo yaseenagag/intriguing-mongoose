@@ -1,0 +1,30 @@
+extends ../layout
+
+block content
+
+  h2 Pizza details
+
+  if crust
+    h4 #{crust.name}
+
+  if toppings
+    -for (topping of toppings){
+        h4 #{topping.name}
+          a( href="/custom_pizza/delete-topping/" + pizza_id + "/" + topping.id + "/" + customer_id + "/" + order_id )  delete
+    -}
+
+    h5 Price: $#{pizza_price}
+
+  form( action="/custom_pizza/add-topping/" + pizza_id + "/" + customer_id + "/" + order_id, method="post" )
+    input( name="order_id", type="hidden", value=order_id)
+    select( name="addTopping" )
+      -for (topping of toppingsList){
+        option( value=topping.id) #{topping.name}
+      -}
+    input( type="submit", value="Add Topping")
+
+  form( action=`/order/add/custom_pizza`, method="post")
+    input( name="customer_id", type="hidden", value=customer_id)
+    input( name="order_id", type="hidden", value=order_id )
+    input( name="pizza_id", type="hidden", value=pizza_id )
+    input( type="submit", value="Add to Order")

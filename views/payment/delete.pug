@@ -1,0 +1,12 @@
+extends ../layout
+
+block content
+  h2 Delete a Payment
+
+
+  if payment
+    h4 You sure you want to delete #{payment.cardholder_name}?
+
+    form( action="/payment/delete/" + payment.id, method="post" )
+      input( type='submit', value='Confirm' )
+      a(href="/payment/") Cancel

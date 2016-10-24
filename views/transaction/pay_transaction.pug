@@ -1,0 +1,13 @@
+extends ../layout
+
+block content
+
+  h2 Pay Transaction
+
+  if payments
+    form( action="/transaction/pay/" + customer_id + "/" + transaction_id, method="post" )
+      select( name="payment_id" )
+        -for ( payment of payments ){
+          option( value=payment.id ) #{payment.cardholder_name}
+        -}
+      input( type='submit', value="Pay" )

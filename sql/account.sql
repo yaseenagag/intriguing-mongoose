@@ -1,0 +1,10 @@
+INSERT INTO account (username, password) VALUES ('WaltBooks','ilikepizza');
+INSERT INTO account (username, password) VALUES ('NTurner','freedom');
+INSERT INTO account (username, password) VALUES ('LouMary','littlehouse');
+INSERT INTO account (username, password) VALUES ('Tubman','railroad');
+INSERT INTO account (username, password) VALUES ('BBarker','answeris');
+INSERT INTO account (username, password) VALUES ('FondaJ','anaconda');
+INSERT INTO account (username, password) VALUES ('MsAngelou','mockingbird');
+INSERT INTO account (username, password) VALUES ('BookerT','brickbybrick');
+INSERT INTO account (username, password) VALUES ('TPain','penderdown');
+INSERT INTO account (username, password) VALUES ('I','amtheway');

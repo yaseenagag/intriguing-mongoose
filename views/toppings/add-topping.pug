@@ -1,0 +1,10 @@
+extends ../layout
+
+block content
+
+    h1 Add a Topping
+
+    form( action='/toppings/add', method='post' )
+      input( name="name", placeholder="topping name" )
+      input( name="price", placeholder="topping price")
+      input( type="submit", value="Submit" )

@@ -1,0 +1,9 @@
+extends ../layout
+
+block content
+  if beverage
+    h2 Are you sure you want to delete #{beverage.name}?
+
+    form( action=`/beverage/delete/` + beverage.id, method="post" )
+      input( type="submit", value="Confirm")
+    a(href="/beverage/details/" + beverage.id ) Cancel

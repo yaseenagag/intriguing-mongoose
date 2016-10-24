@@ -1,0 +1,11 @@
+extends ../layout
+
+block content
+  h2 Beverages
+  hr
+
+  if beverages
+    -for (beverage of beverages){
+      a(href="/order/add/beverage/" + beverage.id + "/" + customer_id + "/" + order_id)
+        h4 #{beverage.name}
+    -}

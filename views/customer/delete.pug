@@ -1,0 +1,12 @@
+extends ../layout
+
+block content
+  h2 Delete a Customer
+
+
+  if customer
+    h4 You sure you want to delete #{customer.name}?
+
+    form( action="/customer/delete/" + customer.id, method="post" )
+      input( type='submit', value='Confirm' )
+      a(href="/customer/") Cancel

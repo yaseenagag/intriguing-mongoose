@@ -1,0 +1,19 @@
+extends ../layout
+
+block content
+  if customer
+    ul
+    -for ( customer of customer ) {
+        h4 #{customer.name}
+        p
+          ul
+            li
+              a(href="/customer/edit/" + customer.id ) edit  &nbsp
+            li
+              a(href="/customer/delete/" + customer.id ) delete
+
+    -}
+    br
+    hr
+    br
+    a(href="/customer/add" ) Add

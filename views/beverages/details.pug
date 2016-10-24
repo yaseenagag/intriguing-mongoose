@@ -1,0 +1,23 @@
+extends ../layout
+
+block content
+  h3 Beverage details
+  hr
+
+  if beverage
+    h4 #{beverage.name}
+    ul
+      li
+        h5 #{beverage.manufacturer}
+      li
+        h5 #{beverage.supplier}
+      li
+        h5 #{beverage.price}
+
+    h5
+      a( href="/beverage/edit/" + beverage.id ) Edit
+    h5
+      a( href="/beverage/delete/" + beverage.id ) Delete
+
+  hr
+  a( href="/beverage/" ) Back to List

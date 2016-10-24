@@ -1,0 +1,11 @@
+extends ../layout
+
+block content
+  h2 Delete a Topping
+
+  if crust
+    h4 You sure you want to delete #{crust.name}
+
+    form( action="/crusts/delete/" + crust.id, method="post" )
+      input( type="submit", value="Confirm" )
+      a( href="/crusts/" ) Cancel

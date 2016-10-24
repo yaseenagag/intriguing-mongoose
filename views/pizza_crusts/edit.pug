@@ -1,0 +1,12 @@
+extends ../layout
+
+block content
+  if crust
+    h2 Edit #{crust.name}
+
+    form( action="/crusts/edit/" + crust.id, method="post" )
+      input( name="name", placeholder=crust.name )
+      input( name="price", placeholder=crust.price )
+      input( type="submit", value="Submit" )
+
+    a( href="/crusts/" ) Cancel

@@ -1,0 +1,16 @@
+extends ../layout
+
+block content
+
+  h2 Custom pizzas
+  hr
+
+
+  if pizzas
+    -for ( pizza of pizzas ){
+      a(href="/custom_pizza/details/" + pizza.id )
+        h5 ID: #{pizza.id}
+      p
+        span Price: $#{pizza.price}
+      hr
+    -}

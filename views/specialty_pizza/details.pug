@@ -1,0 +1,13 @@
+extends ../layout
+
+block content
+
+  h2 Pizza details
+
+  if specialty_pizza
+    h4 #{specialty_pizza.description}
+
+    h5 Price: $#{specialty_pizza.price}
+
+    form( action="/order/add/specialty_pizza/" + specialty_pizza.id + "/" + customer_id + "/" + order_id, method="post" )
+      input( type="submit", value="Add to Order"  )

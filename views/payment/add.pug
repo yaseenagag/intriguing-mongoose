@@ -1,0 +1,14 @@
+extends ../layout
+
+block content
+
+  h1 Add a Payment
+
+  form( action='/payment/add', method='post' )
+    input( name="card_type", placeholder="payment type" )
+    input( name="card_number", placeholder="card number")
+    input( name="expiration_date", placeholder="expiration date")
+    input( name="csv", placeholder="csv")
+    input( name="cardholder_name", placeholder="cardholder name")
+    input( name="customer_id", type="hidden", value=customer_id)
+    input( type="submit", value="Submit" )

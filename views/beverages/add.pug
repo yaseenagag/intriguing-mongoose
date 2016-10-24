@@ -1,0 +1,17 @@
+extends ../layout
+
+block content
+  h2 Add A Beverage
+  hr
+  br
+
+  if message
+    h5= message
+
+  form( action="/beverage/add", method="post" )
+    input( name="name", placeholder="Name" )
+    input( name="manufacturer", placeholder="Manufacturer" )
+    input( name="supplier", placeholder="Supplier" )
+    input( name="price", placeholder="Price" )
+
+    input( type="submit", value="Submit")

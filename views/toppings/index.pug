@@ -1,0 +1,19 @@
+extends ../layout
+
+block content
+  if toppings
+    ul
+    -for ( topping of toppings ) {
+        h4 #{topping.name}
+        p
+          ul
+            li
+              a(href="/toppings/edit/" + topping.id ) edit  &nbsp
+            li
+              a(href="/toppings/delete/" + topping.id ) delete
+
+    -}
+    br
+    hr
+    br
+    a(href="/toppings/add" ) Add

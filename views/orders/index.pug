@@ -1,0 +1,16 @@
+extends ../layout
+
+block content
+
+  h2 orders
+  hr
+
+  if orders
+    -for ( order of orders ){
+      a(href="/order/details/" + order.id)
+        span OrderID: #{order.id}
+      p
+        Order Price: #{order.price}
+      hr
+    -}
+    

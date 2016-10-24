@@ -1,0 +1,20 @@
+extends layout
+
+block content
+  h2 Opening Page for Picadelli
+
+  if customerList
+
+    h4 Choose a customer
+    form( action="/order/new", method="post" )
+      select( name="customer_id" )
+        -for( customer of customerList ){
+          option( value= customer.id ) #{customer.name}
+        -}
+      input( type="submit", value="Choose" )
+    hr
+
+  h4 Create a new Customer
+  a( href="/customer/add" )
+    button Create
+  hr

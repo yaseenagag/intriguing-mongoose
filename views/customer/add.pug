@@ -1,0 +1,11 @@
+extends ../layout
+
+block content
+
+    h1 Add a Customer
+
+    form( action='/customer/add', method='post' )
+      input( name="name", placeholder="customer name" )
+      input( name="address", placeholder="customer address")
+      input( name="phone_number", placeholder="customer phone number")
+      input( type="submit", value="Submit" )

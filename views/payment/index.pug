@@ -1,0 +1,19 @@
+extends ../layout
+
+block content
+  if payment
+    ul
+    -for (payment of payment ) {
+        h4 #{payment.cardholder_name}
+        p
+          ul
+            li
+              a(href="/payment/edit/" + payment.id ) edit  &nbsp
+            li
+              a(href="/payment/delete/" + payment.id ) delete
+
+    -}
+    br
+    hr
+    br
+    a(href="/payment/add" ) Add

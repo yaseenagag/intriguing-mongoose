@@ -1,0 +1,14 @@
+extends ../layout
+
+block content
+  if payment
+    h2 Edit #{payment.cardholder_name}
+
+    form( action="/payment/edit/" + payment.id, method="post" )
+      input( name="card_type", placeholder=payment.card_type )
+      input( name="card_number", placeholder="XXXX" )
+      input( name="expiration_date", placeholder="XXX" )
+      input( name="csv", placeholder="XXX" )
+      input( name="cardholder_name", placeholder=payment.cardholder_name)
+      input( type="submit", value="Submit")
+    a( href="/payment/" ) Cancel

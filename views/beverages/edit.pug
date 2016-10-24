@@ -1,0 +1,14 @@
+extends ../layout
+
+block content
+  h2 Edit Beverage
+
+  if beverage
+    form( action="/beverage/edit/" + beverage.id, method="post" )
+      input( name="name", placeholder=beverage.name )
+      input( name="manufacturer", placeholder=beverage.manufacturer )
+      input( name="supplier", placeholder=beverage.supplier )
+      input( name="price", placeholder=beverage.price )
+      input( type="submit", value="Submit")
+
+  a( href="/beverage/details/" + beverage.id ) Cancel

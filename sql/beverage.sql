@@ -1,0 +1,10 @@
+INSERT INTO beverage (name, manufacturer, supplier, price) VALUES ('Water','Earth','Mother Nature', 2);
+INSERT INTO beverage (name, manufacturer, supplier, price) VALUES ('Mineral Water','Earth','Mother Nature', 2);
+INSERT INTO beverage (name, manufacturer, supplier, price) VALUES ('Fresh Water','Earth','Mother Nature', 2);
+INSERT INTO beverage (name, manufacturer, supplier, price) VALUES ('Non-Flouride Water','Earth','Mother Nature', 2);
+INSERT INTO beverage (name, manufacturer, supplier, price) VALUES ('Free Water','Earth','Mother Nature', 0);
+INSERT INTO beverage (name, manufacturer, supplier, price) VALUES ('Reverse-Osmosis Water','Earth','Mother Nature', 2);
+INSERT INTO beverage (name, manufacturer, supplier, price) VALUES ('Extra-Dimensional Water','Earth','Mother Nature', 2);
+INSERT INTO beverage (name, manufacturer, supplier, price) VALUES ('Earth Water','Earth','Mother Nature', 2);
+INSERT INTO beverage (name, manufacturer, supplier, price) VALUES ('Other Earth Water','Earth','Mother Nature', 2);
+INSERT INTO beverage (name, manufacturer, supplier, price) VALUES ('Water Water','Earth','Mother Nature', 2);

@@ -1,0 +1,19 @@
+extends ../layout
+
+block content
+  h2 Crusts
+
+  if crusts
+    -for (crust of crusts){
+        h4 #{crust.name}
+        p
+          ul
+            li
+              a(href="/crusts/edit/" + crust.id ) Edit
+            li
+              a(href="/crusts/delete/" + crust.id ) Delete
+    -}
+    hr
+    p
+      h5
+        a( href="/crusts/add" ) add
