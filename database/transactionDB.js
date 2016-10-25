@@ -13,9 +13,6 @@ const Transaction = {
                 INSERT INTO transaction_payments ( transaction_id, payment_id ) VALUES ( ${transaction_id}, ${payment_id} );
                 UPDATE transaction SET date='${date}' WHERE id=${transaction_id};
                 COMMIT;` )}
-
-
-
 }
 
 module.exports = Transaction

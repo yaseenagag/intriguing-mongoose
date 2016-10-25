@@ -8,13 +8,12 @@ const Customer = {
   getById: id => db.one( `SELECT * FROM customer WHERE id=${id}` ),
   getNames: () => db.any( `SELECT name FROM customer` ),
   update: ( id, name = '', address = '', phone_number = '' ) => {
-          let sql = `BEGIN TRANSACTION;`
-          if (name != '') sql += `UPDATE customer SET name='${name}' WHERE id = ${id};`
-          if (address != '') sql += `UPDATE customer SET address='${address}' WHERE id = ${id};`
+          let sql =                      `BEGIN TRANSACTION;`
+          if (name != '') sql +=         `UPDATE customer SET name='${name}' WHERE id = ${id};`
+          if (address != '') sql +=      `UPDATE customer SET address='${address}' WHERE id = ${id};`
           if (phone_number != '') sql += `UPDATE customer SET phone_number='${phone_number}' WHERE id = ${id};`
-          sql += `COMMIT;`
-          db.none( sql )
-        },
+          sql +=                         `COMMIT;`
+          db.none( sql )},
   delete: id => db.none( `DELETE FROM customer WHERE id=${id}` )
 
 

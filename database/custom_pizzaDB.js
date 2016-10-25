@@ -13,12 +13,9 @@ const CustomPizza = {
   getCrust: pizza_id => db.oneOrNone( `SELECT name FROM crust JOIN pizza_crusts ON crust.id=pizza_crusts.crust_id WHERE pizza_crusts.pizza_id = ${pizza_id}` ),
   getToppings: pizza_id => db.any( `SELECT * FROM topping JOIN pizza_toppings ON topping.id = pizza_toppings.topping_id WHERE pizza_toppings.pizza_id = ${pizza_id}` ),
 
-  calcPrice: pizza_id => db.one( `UPDATE custom_pizza SET price =
+  calcPrice: pizza_id => db.one(  `UPDATE custom_pizza SET price =
                                   ( SELECT COALESCE(price, 0) FROM crust WHERE id = (SELECT crust_id FROM pizza_crusts WHERE pizza_id=${pizza_id}) )
                                     +
                                   ( SELECT COALESCE(SUM(price), 0) FROM topping JOIN pizza_toppings ON topping.id = pizza_toppings.topping_id WHERE pizza_toppings.pizza_id = ${pizza_id})
-                                  WHERE id = ${pizza_id} RETURNING price` )
-
-}
-
+                                  WHERE id = ${pizza_id} RETURNING price` )}
 module.exports = { CustomPizza }
