@@ -16,6 +16,12 @@ Specifications
 
 ### Specs
 
+- [ ] Create several "Business Reporting" functions which return data on varius aspect of the business (total sales per year, etc..)
+- [ ] Basic API provided with ability to CRUD the data in the database.
+- [ ] __STRETCH SPEC__ Add user authentication and functions that allow a user to alter various aspects of their accounts.
+
+
+
 - [x] Create a detailed E-R diagram.
 - [x] Perform as much logic as possible in the database.
 - [x] Track all of its customers and any relevant customer information, such as customer ID, name, username/login details, delivery address, phone number, payment methods on file.
