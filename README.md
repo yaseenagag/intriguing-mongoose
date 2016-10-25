@@ -20,7 +20,7 @@ Specifications
 - [ ] Basic API provided with ability to CRUD the data in the database.
 - [ ] __STRETCH SPEC__ Add user authentication and functions that allow a user to alter various aspects of their accounts.
 
-
+#### Previous Weel's Specs
 
 - [x] Create a detailed E-R diagram.
 - [x] Perform as much logic as possible in the database.
