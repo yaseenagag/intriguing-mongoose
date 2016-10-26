@@ -24,10 +24,10 @@ router.delete('/api/specialty_pizza/:id', API.specialty.delete )
 
 // // /*Toppings*/
 router.get('/api/topping', API.topping.getAll )
-// router.get('/api/topping/:id', API.topping.getOne )
-// router.post('/api/topping', API.topping.add )
-// router.put('/api/topping/:id', API.topping.edit )
-// router.delete('/api/topping/:id', API.topping.delete )
+router.get('/api/topping/:id', API.topping.getOne )
+router.post('/api/topping', API.topping.add )
+router.put('/api/topping/:id', API.topping.update )
+router.delete('/api/topping/:id', API.topping.delete )
 // //
 // // /*Crusts*/
 router.get('/api/crust', API.crust.getAll )
