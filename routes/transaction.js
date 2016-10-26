@@ -18,7 +18,7 @@ router.get( '/details/:customer_id/:transaction_id', ( request, response ) => {
 
 router.post( '/new', ( request, response ) => {
   const { customer_id, order_id } = request.body
-  Promise.all([ Transaction.new( customer_id, order_id ) ])
+  Promise.all([ Transaction.new( order_id ) ])
   .then( r_transaction_id => {
     const transaction_id = r_transaction_id[0].id
     response.redirect( `/transaction/create/${customer_id}/${transaction_id}` )
