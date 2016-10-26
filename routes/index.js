@@ -17,9 +17,9 @@ router.get( '/admin', ( request, response ) =>{
 /*Special Pizzas*/
 router.get('/api/specialty_pizza', API.specialty.getAll )
 router.get('/api/specialty_pizza/:id', API.specialty.getOne )
-// router.post('/api/specialty_pizza', API.specialty.add )
-// router.put('/api/specialty_pizza/:id', API.specialty.edit )
-// router.delete('/api/specialty_pizza/:id', API.specialty.delete )
+router.post('/api/specialty_pizza', API.specialty.add )
+router.put('/api/specialty_pizza/:id', API.specialty.update )
+router.delete('/api/specialty_pizza/:id', API.specialty.delete )
 
 
 // // /*Toppings*/
