@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const { CustomPizza } = require('../database/custom_pizzaDB')
-const { Crust } = require('../database/crustDB')
-const { Topping } = require('../database/toppingsDB')
+const { Crust, Topping, CustomPizza } = require('../database/custom_pizzaDB')
+// const { Crust } = require('../database/crustDB')
+// const { Topping } = require('../database/toppingsDB')
 
 router.get('/', ( request, response ) => {
   Promise.all([ CustomPizza.getAll() ])
@@ -70,4 +70,4 @@ router.get( '/delete-topping/:pizza_id/:topping_id/:customer_id/:order_id', ( re
 
 
 
-module.exports = router;
+module.exports = router

@@ -1,4 +1,3 @@
-const db = require('../mainDB')
 const { Beverage } = require('../beverageDB')
 
 const beverage = {
@@ -17,6 +16,7 @@ const beverage = {
        return next(err)
      })
   },
+
   getOne: ( request, response, next ) => {
     const { id } = request.params
     Beverage.getById( id )
@@ -47,8 +47,38 @@ const beverage = {
     .catch( err => {
         return next(err)
     })
-  }
+  },
 
+  update: ( request, response, next ) => {
+    const { name, manufacturer, supplier, price } = request.body
+    const { id } = request.params
+    Beverage.api_update( id, name, manufacturer, supplier, price )
+    .then( () => {
+      response.status(200)
+      .json({
+          status: 'success',
+          message: 'Updated beverage'
+            })
+    })
+    .catch( error => {
+      return next( error )
+    })
+  },
+
+  delete: ( request, response, next ) => {
+    const { id } = request.params
+    Beverage.delete( id )
+    .then( () => {
+      response.status(200)
+      .json({
+        status: 'success',
+        message: 'Deleted the drink!'
+      })
+    })
+    .catch( error => {
+      return next( error )
+    })
+  }
 }
 
 module.exports = beverage

@@ -1,5 +1,5 @@
 const db = require('../mainDB')
-const { Topping } = require('../toppingsDB')
+const { Topping } = require('../custom_pizzaDB')
 
 const topping = {
   getAll: ( request, response, next ) => {

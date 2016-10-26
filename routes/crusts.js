@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { Crust } = require('../database/crustDB')
+const { Crust } = require('../database/custom_pizzaDB')
 
 router.get( '/add', ( request, response ) => response.render( 'pizza_crusts/add' ))
 
@@ -45,4 +45,4 @@ router.post( '/delete/:crust_id', ( request, response ) => {
   .then( response.redirect( '/crusts/' ) )
 })
 
-module.exports = router;
+module.exports = router
