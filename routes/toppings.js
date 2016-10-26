@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const db = require('../database/mainDB')
-const { Topping } = require( '../database/toppingsDB' )
+const { Topping } = require( '../database/custom_pizzaDB' )
 
 
 router.get( '/add', ( request, response ) => {
