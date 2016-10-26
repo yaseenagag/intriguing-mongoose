@@ -6,6 +6,7 @@ const Crust = {
   add: ( name, price ) => db.none( `INSERT INTO crust ( name, price ) VALUES ( '${name}', '${price}' )` ),
   getAll: () => db.any( `SELECT * FROM crust` ),
   getById: crust_id => db.one( `SELECT * FROM crust WHERE id = ${crust_id}` ),
+  api_update: ( id, name, price ) => db.none( `UPDATE crust SET name='${name}', price=${price} WHERE id = ${id}`),
   update: ( id, name, price ) => {
           let sql =                 `BEGIN TRANSACTION;`
           if ( name != '' ) sql +=  `UPDATE crust SET name='${name}' WHERE id = ${id};`
