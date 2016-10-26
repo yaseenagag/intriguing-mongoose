@@ -6,19 +6,19 @@ router.get( '/add', ( request, response ) => {
   response.render( 'beverages/add' )
 })
 
-router.post( '/add', ( request, response ) => {
-  const { name, manufacturer, supplier, price } = request.body
-  if( name === '' || manufacturer === '' || supplier === '' || price === '' ) {
-    //response.send( "No" )
-    response.render( 'beverages/add', { message: "All Fields are required." } )
-  } else {
-    Promise.all([ Beverage.add( name, manufacturer, supplier, price ) ])
-    .then( data => {
-      const bev_id = data[0].id
-      response.redirect( `/beverage/details/${bev_id}` )
-    })
-  }
-})
+// router.post( '/add', ( request, response ) => {
+//   const { name, manufacturer, supplier, price } = request.body
+//   if( name === '' || manufacturer === '' || supplier === '' || price === '' ) {
+//     //response.send( "No" )
+//     response.render( 'beverages/add', { message: "All Fields are required." } )
+//   } else {
+//     Promise.all([ Beverage.add( name, manufacturer, supplier, price ) ])
+//     .then( data => {
+//       const bev_id = data[0].id
+//       response.redirect( `/beverage/details/${bev_id}` )
+//     })
+//   }
+// })
 
 
 router.get( '/details/:bev_id', ( request, response ) => {
