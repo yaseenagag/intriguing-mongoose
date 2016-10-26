@@ -24,6 +24,14 @@ const Order = {
   removeSpecialtyPizza: ( order_id, pizza_id ) => db.none( `DELETE FROM ordered_specialty_pizzas WHERE order_id=${order_id} AND pizza_id=${pizza_id}` ),
   removeBeverage: ( order_id, beverage_id ) => db.none( `DELETE FROM ordered_beverages WHERE order_id=${order_id} AND beverage_id=${beverage_id}` ),
 
+  calcPrice: order_id => db.one(  `UPDATE order_data SET price =
+                                  ( SELECT COALESCE(SUM(price), 0) FROM ordered_custom_pizzas JOIN custom_pizza ON ordered_custom_pizzas.pizza_id = custom_pizza.id WHERE ordered_custom_pizzas.order_id = ${order_id} )
+                                    +
+                                  ( SELECT COALESCE(SUM(price), 0) FROM ordered_specialty_pizzas JOIN specialty_pizza ON ordered_specialty_pizzas.pizza_id = specialty_pizza.id WHERE ordered_specialty_pizzas.order_id = ${order_id} )
+                                    +
+                                  ( SELECT COALESCE(SUM(price), 0) FROM ordered_beverages JOIN beverage ON ordered_beverages.beverage_id = beverage.id WHERE ordered_beverages.order_id = ${order_id} )
+                                  WHERE id = ${order_id} RETURNING price` ),
+
   delete: order_id => db.none( `BEGIN TRANSACTION;
                                 DELETE FROM pizza_toppings WHERE pizza_id = ( SELECT pizza_id FROM ordered_custom_pizzas WHERE order_id = ${order_id} );
                                 DELETE FROM pizza_crusts WHERE pizza_id = ( SELECT pizza_id FROM ordered_custom_pizzas WHERE order_id = ${order_id} );

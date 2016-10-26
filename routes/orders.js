@@ -11,10 +11,11 @@ router.get( '/', ( request, response ) => {
 router.get( '/details/:customer_id/:order_id', ( request, response ) => {
   const { customer_id, order_id } = request.params
 
-  Promise.all([ Order.getContents( order_id) ])
+  Promise.all([ Order.getContents( order_id), Order.calcPrice( order_id ) ])
   .then( data => {
 
     const results = data[0]
+    const order_price = data[1].price
 
     const custom_pizza_ids = []
     const specialty_pizza_ids = []
@@ -39,6 +40,7 @@ router.get( '/details/:customer_id/:order_id', ( request, response ) => {
                                         specialtyPizzas: specialty_pizza_ids,
                                         beverages: beverage_ids,
                                         order_id: order_id,
+                                        order_price: order_price,
                                         customer_id: customer_id})
   })
 })
