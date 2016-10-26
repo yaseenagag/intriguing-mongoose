@@ -16,7 +16,7 @@ Specifications
 
 ### Specs
 
-- [ ] Create several "Business Reporting" functions which return data on varius aspect of the business (total sales per year, etc..)
+- [ ] Create several "Business Reporting" functions which return data on various aspects of the business (total sales per year, etc..)
 - [ ] Basic API provided with ability to CRUD the data in the database.
 - [ ] __STRETCH SPEC__ Add user authentication and functions that allow a user to alter various aspects of their accounts.
 
