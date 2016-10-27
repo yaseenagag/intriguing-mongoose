@@ -16,6 +16,7 @@ router.get( '/details/:customer_id/:order_id', ( request, response ) => {
 
     const results = data[0]
     const order_price = data[1].price
+    console.error( order_price )
 
     const custom_pizza_ids = []
     const specialty_pizza_ids = []
