@@ -1,6 +1,5 @@
 const db = require( './mainDB' )
 
-
 const Customer = {
 
   add: ( name, address, phone_number ) => db.one( `INSERT INTO customer ( name, address, phone_number ) VALUES ( '${name}', '${address}', '${phone_number}' ) RETURNING id` ),
