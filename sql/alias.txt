@@ -1,0 +1,3 @@
+alias rstdb='dropdb intriguing-mongoose;createdb intriguing-mongoose;psql intriguing-mongoose < schema.sql;psql intriguing-mongoose < toppings.sql;psql intriguing-mongoose < pizza_crust.sql;
+psql intriguing-mongoose < specialty_pizza.sql;psql intriguing-mongoose < beverage.sql;psql intriguing-mongoose < payment_cards.sql;psql intriguing-mongoose < customer.sql;
+psql intriguing-mongoose < custom_pizza.sql;psql intriguing-mongoose < order_data.sql;psql intriguing-mongoose < transaction.sql'
