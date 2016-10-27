@@ -9,27 +9,27 @@
 CREATE TABLE "topping" (
 "id"  SERIAL NOT NULL ,
 "name" VARCHAR(80) NOT NULL DEFAULT 'NULL' ,
-"price" INTEGER ,
+"price" MONEY,
 PRIMARY KEY ("id")
 );
 
 CREATE TABLE "crust" (
 "id"  SERIAL NOT NULL ,
 "name" VARCHAR(80) NOT NULL DEFAULT 'NULL' ,
-"price" INTEGER ,
+"price" MONEY ,
 PRIMARY KEY ("id")
 );
 
 CREATE TABLE "custom_pizza" (
 "id"  SERIAL NOT NULL ,
-"price" INTEGER NOT NULL ,
+"price" MONEY NOT NULL ,
 PRIMARY KEY ("id")
 );
 
 CREATE TABLE "specialty_pizza" (
 "id"  SERIAL NOT NULL ,
 "description" TEXT ,
-"price" INTEGER ,
+"price" MONEY ,
 PRIMARY KEY ("id")
 );
 
@@ -38,19 +38,19 @@ CREATE TABLE "beverage" (
 "name" VARCHAR(80) ,
 "manufacturer" VARCHAR(80) ,
 "supplier" VARCHAR(80) ,
-"price" INTEGER NOT NULL ,
+"price" MONEY NOT NULL ,
 PRIMARY KEY ("id")
 );
 
 CREATE TABLE "order_data" (
 "id"  SERIAL NOT NULL ,
-"price" INTEGER ,
+"price" MONEY ,
 PRIMARY KEY ("id")
 );
 
 CREATE TABLE "transaction" (
 "id"  SERIAL NOT NULL ,
-"date" VARCHAR(80) ,
+"date" TIMESTAMP WITH TIME ZONE,
 "delivery_address" VARCHAR(80) ,
 "order_id" INTEGER ,
 PRIMARY KEY ("id")
