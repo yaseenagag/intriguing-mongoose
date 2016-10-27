@@ -40,4 +40,10 @@ router.post('/api/beverage', API.beverage.add )
 router.put('/api/beverage/:id', API.beverage.update )
 router.delete('/api/beverage/:id', API.beverage.delete )
 
+router.get('/api/customer', API.customer.getAll )
+router.get('/api/customer/:id', API.customer.getOne )
+router.post('/api/customer', API.customer.add )
+router.put('/api/customer/:id', API.customer.update )
+router.delete('/api/customer/:id', API.customer.delete )
+
 module.exports = router;

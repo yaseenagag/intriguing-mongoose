@@ -4,7 +4,8 @@ const API = {
   specialty: require('./API/specialty_pizza'),
   topping: require('./API/topping'),
   crust: require('./API/crust'),
-  beverage: require('./API/beverage')
+  beverage: require('./API/beverage'),
+  customer: require('./API/customer')
 
 }
 
