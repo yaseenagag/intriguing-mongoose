@@ -27,6 +27,8 @@ router.get('/api/report/sales/custom_pizza', API.Sales.custom_pizza.total )
 router.get('/api/report/sales/specialty_pizza', API.Sales.specialty_pizza.total )
 router.get('/api/report/sales/specialty_pizza/:id', API.Sales.specialty_pizza.by_id )
 
+router.get('/api/report/sales/beverage', API.Sales.beverage.total )
+router.get('/api/report/sales/beverage/:id', API.Sales.beverage.by_id )
 
 router.get('/api/specialty_pizza', API.specialty.getAll )
 router.get('/api/specialty_pizza/:id', API.specialty.getOne )
