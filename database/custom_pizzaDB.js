@@ -52,5 +52,7 @@ const CustomPizza = {
                                   ( SELECT COALESCE(price, CAST(0 AS MONEY)) FROM crust WHERE id = (SELECT crust_id FROM pizza_crusts WHERE pizza_id=${pizza_id}) )
                                     +
                                   ( SELECT COALESCE(SUM(price), CAST(0 AS MONEY)) FROM topping JOIN pizza_toppings ON topping.id = pizza_toppings.topping_id WHERE pizza_toppings.pizza_id = ${pizza_id})
-                                  WHERE id = ${pizza_id} RETURNING price` )}
+                                  WHERE id = ${pizza_id} RETURNING price` )
+}
+
 module.exports = { Crust, Topping, CustomPizza }

@@ -2,7 +2,6 @@ const db = require('./mainDB')
 
 const Beverage = {
   add: ( name, manufacturer, supplier, price ) => db.one( `INSERT INTO beverage ( name, manufacturer, supplier, price ) VALUES ( '${name}', '${manufacturer}', '${supplier}', ${price} ) RETURNING id` ),
-  //add: ( name, manufacturer, supplier, price ) => db.none( `INSERT INTO beverage ( name, manufacturer, supplier, price ) VALUES ( '${name}', '${manufacturer}', '${supplier}', ${price} )` ),
   getAll: () => db.any( `SELECT * FROM beverage` ),
   getById: id => db.one( `SELECT * FROM beverage WHERE id = ${id}` ),
   api_update: (id, name, manufacturer, supplier, price) => db.none( `UPDATE beverage SET name='${name}', manufacturer='${manufacturer}', supplier='${supplier}', price='${price}' WHERE id = ${id}` ),

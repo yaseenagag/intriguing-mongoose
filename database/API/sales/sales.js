@@ -6,6 +6,9 @@ const db = require('../../mainDB')
 const Sales = {
 
   topping: require('./topping'),
+  crust: require('./crust'),
+  custom_pizza: require('./custom_pizza'),
+  specialty_pizza: require('./specialty_pizza'),
 
   total: ( request, response, next ) => {
     db.any( `SELECT
