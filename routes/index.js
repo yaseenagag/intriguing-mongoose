@@ -14,6 +14,10 @@ router.get( '/admin', ( request, response ) =>{
   response.render( 'index' )
 })
 
+router.get('/api/report/sales', API.Sales.total )
+router.get('/api/report/sales/topping', API.Sales.topping.total )
+router.get('/api/report/sales/topping/:name', API.Sales.topping.by_name )
+
 router.get('/api/specialty_pizza', API.specialty.getAll )
 router.get('/api/specialty_pizza/:id', API.specialty.getOne )
 router.post('/api/specialty_pizza', API.specialty.add )
