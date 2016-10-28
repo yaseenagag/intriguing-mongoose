@@ -22,6 +22,7 @@ const Sales = {
   custom_pizza: require('./custom_pizza'),
   specialty_pizza: require('./specialty_pizza'),
   beverage: require('./beverage'),
+  customer: require('./customer'),
 
   total: ( request, response, next ) => {
     db.any( `SELECT

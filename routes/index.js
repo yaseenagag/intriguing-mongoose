@@ -15,20 +15,16 @@ router.get( '/admin', ( request, response ) =>{
 })
 
 router.get('/api/report/sales', API.Sales.total )
-
 router.get('/api/report/sales/topping', API.Sales.topping.total )
 router.get('/api/report/sales/topping/:name', API.Sales.topping.by_name )
-
 router.get('/api/report/sales/crust', API.Sales.crust.total )
 router.get('/api/report/sales/crust/:id', API.Sales.crust.by_id )
-
 router.get('/api/report/sales/custom_pizza', API.Sales.custom_pizza.total )
-
 router.get('/api/report/sales/specialty_pizza', API.Sales.specialty_pizza.total )
 router.get('/api/report/sales/specialty_pizza/:id', API.Sales.specialty_pizza.by_id )
-
 router.get('/api/report/sales/beverage', API.Sales.beverage.total )
 router.get('/api/report/sales/beverage/:id', API.Sales.beverage.by_id )
+router.get('/api/report/sales/customer/:id', API.Sales.customer.by_id )
 
 router.get('/api/specialty_pizza', API.specialty.getAll )
 router.get('/api/specialty_pizza/:id', API.specialty.getOne )
@@ -60,4 +56,4 @@ router.post('/api/customer', API.customer.add )
 router.put('/api/customer/:id', API.customer.update )
 router.delete('/api/customer/:id', API.customer.delete )
 
-module.exports = router;
+module.exports = router
