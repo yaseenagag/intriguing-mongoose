@@ -5,7 +5,8 @@ const API = {
   topping: require('./API/topping'),
   crust: require('./API/crust'),
   beverage: require('./API/beverage'),
-  customer: require('./API/customer')
+  customer: require('./API/customer'),
+  Sales: require('./API/sales/sales')
 
 }
 
