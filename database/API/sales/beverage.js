@@ -38,7 +38,6 @@ const beverage = {
 
   by_id: ( request, response, next) => {
     const { id } = request.params
-    console.log(id)
     db.any( `SELECT
             (SELECT SUM(beverage.price) AS "Q1" FROM transaction
                 JOIN order_data ON transaction.order_id=order_data.id
