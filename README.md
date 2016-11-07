@@ -1,19 +1,26 @@
 # Intrigued-Mongoose
 
+### Story
 
+Piccadilly Pizza is a diamond in the rough: their deep dish is the bomb dot com, but they're just breaking even because they lack the easy-to-use online ordering interface that will give them a competitive edge.
 
-### This Week's Specs (11/7/2016)
-- [ ] Incorporate salted user auth ()
-- [ ] How do you keep safe credit card data? (encryption?)
-- [ ]
+Your job is to design a schema based on the guidelines Piccadilly Pizza has provided, complete with a programmatic component that allows for basic to CRUD operations on the data.
 
-#### Week 2 Specs
+As a proof of concept, you will first create an E-R diagram that specifies the relationships between these data types, similar to this one. You can use a tool like WWW SQL Designer or MySQL Workbench to create this diagram (here's an example).
+
+Your job is also to provide a basic interface that provides the ability to CRUD the data in each of these tables.
+Context
+
+This project will give you experience in designing a robust schema that represents a complex, real-world system as well as an introduction to an ORM without having to worry too much about complex join operations.
+Specifications
+
+### Specs
 
 - [x] Create several "Business Reporting" functions which return data on various aspects of the business (total sales per year, etc..)
 - [x] Basic API provided with ability to CRUD the data in the database.
 - [ ] __STRETCH SPEC__ Add user authentication and functions that allow a user to alter various aspects of their accounts.
 
-#### Week 1 Specs
+#### Previous Week's Specs
 
 - [x] Create a detailed E-R diagram.
 - [x] Perform as much logic as possible in the database.
